@@ -16,23 +16,19 @@ public class Main {
     }
 
     //Task 2
-    public static void recommendApplicationVersion(int clientOs, int deviceYear) {
-        boolean deviceIsOld = isDeviceOld(deviceYear);
-        String resultMessages= "Установите ";
-        if (deviceIsOld) {
-           resultMessages = resultMessages + "Lite ";
+
+    public static void printSetSystem(int clientDeviceYear, int clientDevice) {
+        String version = "";
+        if (clientDeviceYear < 2015) {
+            version = "облегченную";
         }
-        resultMessages = resultMessages + "версию для ";
-        if (clientOs == 0) {
-            resultMessages = resultMessages + "iOS";
-        } else {
-            resultMessages = resultMessages + "Android";
+        String device = "";
+        if (clientDevice == 0) {
+            device = "iOS";
+        } else if (clientDevice == 1) {
+            device = "Android";
         }
-        System.out.println(resultMessages);
-    }
-    public static boolean isDeviceOld(int deviceYear) {
-        int currentYear = LocalDate.now().getYear();
-        return deviceYear <= currentYear;
+        System.out.printf("Установите %s версию приложения для %s по ссылке", version, device);
     }
 
     //Task 3
