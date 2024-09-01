@@ -4,7 +4,6 @@ import java.util.Locale;
 public class Main {
     //Task 1
     public static void printLeapYearStatus(int year) {
-        System.out.println("Task 1");
         if (year > 1584 && (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)) {
             System.out.println(year + " год високосный");
         } else {
@@ -18,7 +17,6 @@ public class Main {
 
     //Task 2
     public static void recommendApplicationVersion(int clientOs, int deviceYear) {
-        System.out.println("Task 2");
         boolean deviceIsOld = isDeviceOld(deviceYear);
         String resultMessages= "Установите ";
         if (deviceIsOld) {
@@ -37,24 +35,10 @@ public class Main {
         return deviceYear <= currentYear;
     }
 
-    public static void printSetSystem(int clientDeviceYear, int clientDevice) {
-        String version = "";
-        if (clientDeviceYear < 2015) {
-            version = "облегченную";
-        }
-        String device = "";
-        if (clientDevice == 0) {
-            device = "IOS";
-        } else if (clientDevice == 1) {
-            device = "Android";
-        }
-        System.out.printf("Установите %s версию приложения для %s по ссылке", version, device);
-    }
     //Task 3
     public static void printDeliveryDays(int deliveryDistance) {
         System.out.println(calculateDeliveryDays(deliveryDistance));
     }
-
     public static int calculateDeliveryDays(int deliveryDistance) {
         int deliveryDays = 1;
         if (deliveryDistance > 20) {
